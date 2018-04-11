@@ -5,5 +5,8 @@
 	"instanceId":"Instance Id",
 	"local_hostname":"Local Hostname",
 	"privateIp":"Private IP",
-	"instanceType":"Instance Type"
+	"instanceType":"Instance Type",
+	"public_hostname":"Public Hostname",
+	"local_ipv4":"Local IPv4",
+	"aws.public_ipv4":"Public IPv4"
 }

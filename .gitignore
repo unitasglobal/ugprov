@@ -3,6 +3,7 @@ ami-id
 local-hostname
 provision_settings
 index.html
+aws.*
 
 # OS-specific
 .DS_Store

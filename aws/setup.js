@@ -2,12 +2,12 @@
 
 const fs = require('fs');
 
-let TRANSLATION = {
+let TRANSLATION = {}
 
 
-}
 
-const fileList = ["translation","template.html","provision_settings","aws_settings","ami-id","local-hostname"];
+
+let fileList = [];
 
 const fileData = {};
 
@@ -40,13 +40,23 @@ const readFiles = (callback) => {
 	}
 }
 
-
-readFiles(() => {
+const processFiles = () => {
+	console.log(fileData);
 	TRANSLATION = JSON.parse(fileData.translation);
 	let aws_settings = JSON.parse(fileData.aws_settings);
+	delete fileData.aws_settings;
+
+
+
 	let provision_settings = JSON.parse(fileData.provision_settings);
-	aws_settings.ami_id = fileData["ami-id"];
-	aws_settings.local_hostname = fileData["local-hostname"];
+
+	for(var fileName in fileData){
+		if(fileName.indexOf("aws.") == 0){
+			aws_settings[fileName.substring(4)] = fileData[fileName];
+		}
+
+	}
+	console.log(JSON.stringify(aws_settings,null,4));
 
 	let html = fileData["template.html"];
 	html = html.replace("<!--CLOUD SETTINGS-->",makeTable(aws_settings));
@@ -55,4 +65,17 @@ readFiles(() => {
 	fs.writeFile("index.html",html,(err) => {
 		console.log("done");
 	});
+}
+
+fs.readdir('./',(err,data) => {
+	for(var file of data){
+		if(file[0] == "."){
+
+		}else if(file.indexOf(["setup.js","index.html","setup.sh"]) > -1){
+
+		}else{
+			fileList.push(file);
+		}
+	}
+	readFiles(processFiles);
 });
