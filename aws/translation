@@ -1,0 +1,9 @@
+{
+	"ami_id":"AMI Image ID",
+	"region":"Region",
+	"availabilityZone":"Availability Zone",
+	"instanceId":"Instance Id",
+	"local_hostname":"Local Hostname",
+	"privateIp":"Private IP",
+	"instanceType":"Instance Type"
+}
