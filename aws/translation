@@ -8,5 +8,13 @@
 	"instanceType":"Instance Type",
 	"public_hostname":"Public Hostname",
 	"local_ipv4":"Local IPv4",
-	"aws.public_ipv4":"Public IPv4"
+	"public_ipv4":"Public IPv4",
+	"arch":"OS Architecture",
+	"cores":"Cores",
+	"freemem":"Free Memory",
+	"hostname":"Hostname",
+	"net_inf":"Network Interfaces",
+	"platform":"OS Platform",
+	"release":"OS Release",
+	"totalmem":"Total Memory"
 }
