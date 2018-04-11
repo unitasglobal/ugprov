@@ -1,0 +1,117 @@
+aws_settings
+ami-id
+local-hostname
+provision_settings
+index.html
+
+# OS-specific
+.DS_Store
+
+# Editor swapfiles
+.*.sw?
+*~
+
+# Webpack outputs
+*.bundle
+*.css
+*.css.map
+
+# Vagrant stuff
+acceptance_config.yml
+boxes/*
+/.vagrant
+/website/.vagrant
+/website/build
+/vagrant-spec.config.rb
+.vagrant/
+
+# Bundler/Rubygems
+*.gem
+.bundle
+pkg/*
+tags
+/Gemfile.lock
+test/tmp/
+vendor/
+/exec
+
+# Documentation
+_site/*
+.yardoc/
+doc/
+.swagger-codegen*
+docs/Swagger/index.html
+
+# Python
+*.pyc
+
+# Rubinius
+*.rbc
+
+# IDE junk
+.idea/*
+*.iml
+.project
+jsconfig.json
+.vscode/
+
+# Ruby Managers
+.rbenv
+.rbenv-gemsets
+.ruby-gemset
+.ruby-version
+.rvmrc
+
+# Box storage for spec
+test/vagrant-spec/boxes/*.box
+
+#node junk
+# Dependency directories
+node_modules/
+jspm_packages/
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+#caching
+.cached
+
+# Ephemeral runtime & log files
+Local/
+
+# Credentials and Certificates #
+################################
+
+# Binary DER encoded certificates
+.der
+.pem
+
+# PKCS#7
+.p7b
+.p7c
+.cer
+
+# PKCS#12
+.pfx
+.p12
+
+# Other common extensions
+.crt
+.key
+.ca-bundle
+.pub
+.pri
+.bin
