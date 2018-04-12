@@ -102,6 +102,7 @@ const processFiles = () => {
 	html = html.replace("<!--CLOUD SETTINGS-->",makeTable(aws_settings));
 	html = html.replace("<!--APP SETTINGS-->",makeTable(aws_settings));
 	html = html.replace("<!--OS SETTINGS-->",makeTable(getOSData()));
+	html = html.replace("<!--TIME-->",new Date().toISOString());
 	fs.writeFile("index.html",html,(err) => {
 		console.log("done");
 	});
