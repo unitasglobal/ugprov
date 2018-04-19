@@ -1,9 +1,11 @@
 aws_settings
+azure_settings
 ami-id
 local-hostname
 provision_settings
 index.html
 aws.*
+azure.*
 
 # OS-specific
 .DS_Store
