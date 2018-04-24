@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /ug/ugprov;
+cd /ug/ugprov/azure;
 
 git pull;
 
