@@ -103,18 +103,18 @@ const processFiles = () => {
 	}
 	console.log(JSON.stringify(azure_settings,null,4));
 	
-	let provision_settings = JSON.parse(fileData.provision_settings || "{}");
+	let ovf = fileData["ovf.xml"];
+	let regex = /<ns1:CustomData>([\s\S]*)<\/ns1:CustomData>/;
+	let customDataBase64 = regex.exec(ovf)[1];
+	let customData = Buffer.from(customDataBase64, 'base64').toString();
+	let appSettings = {custom_data:customData};
+	
 
-	for(var fileName in fileData){
-		if(fileName.indexOf("azure.") == 0){
-			azure_settings[fileName.substring(4)] = fileData[fileName];
-		}
-	}
 
 
 	let html = fileData["template.html"];
 	html = html.replace("<!--CLOUD SETTINGS-->",makeTable(azure_settings));
-	html = html.replace("<!--APP SETTINGS-->",makeTable(azure_settings));
+	html = html.replace("<!--APP SETTINGS-->",makeTable(appSettings));
 	html = html.replace("<!--OS SETTINGS-->",makeTable(getOSData()));
 	html = html.replace("<!--TIME-->",new Date().toISOString());
 	fs.writeFile("index.html",html,(err) => {

@@ -17,7 +17,7 @@
 	"net_inf":"Network Interfaces",
 	"publisher":"OS Platform",
 	"version":"OS Release",
-	"xxx":"Image ID",
+	"custom_data":"Custom Data",
 	"totalmem":"Total Memory",
 	"cores":"Cores"
 }
